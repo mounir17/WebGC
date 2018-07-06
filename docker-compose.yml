@@ -1,0 +1,13 @@
+version : '3'
+
+services:
+  webgc-client:
+    build: ./
+    volumes:
+      - ./peerjs-gossip:/usr/webgc
+    ports:
+      - "5004:5004"
+  webgc-server:
+    image: azerty123/webgc_server
+    ports:
+     - "5004:2102"
